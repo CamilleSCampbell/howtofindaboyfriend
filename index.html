@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOW TO FIND A BOYFRIEND — Screenplay Pitch</title>
+<link rel="canonical" href="https://howtofindaboyfriend.com/">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --hot: #ff2d7b;
+    --soft: #ffb6d5;
+    --baby: #ffd6e7;
+    --cream: #fff0f5;
+    --blush: #ffe0ed;
+    --rose: #d4145a;
+    --ink: #1a0a12;
+    --plum: #3d0f24;
+    --w: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ═══ SLIDE SYSTEM ═══ */
+  .slide {
+    min-height: 100vh;
+    min-height: 100svh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--hot);
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+  }
+
+  /* NAV DOTS */
+  .dots {
+    position: fixed;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 100;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--soft);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: var(--hot);
+    border-color: var(--hot);
+    transform: scale(1.3);
+  }
+
+  /* ══════════════════════════════════════
+     SLIDE 1: TYPEWRITER TITLE
+     ══════════════════════════════════════ */
+  .s-title-slide {
+    text-align: center;
+    background:
+      radial-gradient(ellipse at 25% 25%, rgba(255,182,213,0.45) 0%, transparent 50%),
+      radial-gradient(ellipse at 75% 75%, rgba(232,213,245,0.35) 0%, transparent 50%),
+      var(--cream);
+  }
+
+  .floater {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.1;
+    font-size: 5rem;
+    animation: drift 9s ease-in-out infinite alternate;
+  }
+  .floater:nth-child(2) { animation-delay: -3s; animation-duration: 11s; }
+  .floater:nth-child(3) { animation-delay: -5s; animation-duration: 13s; }
+
+  @keyframes drift {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-18px) rotate(6deg); }
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--hot);
+    background: var(--w);
+    border: 1.5px solid var(--soft);
+    border-radius: 100px;
+    padding: 0.5rem 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Typewriter container */
+  .tw-wrap {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tw-line {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.8rem, 10vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--ink);
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+  }
+
+  .tw-line .pop {
+    color: var(--hot);
+    font-style: italic;
+    position: relative;
+  }
+
+  .tw-line .pop::after {
+    content: '';
+    position: absolute;
+    bottom: 0.04em;
+    left: -2%;
+    right: -2%;
+    height: 0.16em;
+    background: var(--baby);
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  .tw-struck {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.8rem, 10vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--soft);
+    letter-spacing: -0.04em;
+    text-decoration: line-through;
+    font-style: italic;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .tw-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    background: var(--hot);
+    margin-left: 4px;
+    animation: blink 0.6s step-end infinite;
+    vertical-align: baseline;
+    position: relative;
+    top: 0.08em;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .byline {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-top: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .byline.show { opacity: 1; }
+
+  .tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .tags-row.show { opacity: 1; }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    background: var(--w);
+    border: 1px solid var(--soft);
+    color: var(--rose);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.45rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--soft);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .scroll-hint.show { opacity: 1; }
+
+  .scroll-arrow {
+    width: 16px; height: 16px;
+    border-right: 1.5px solid var(--soft);
+    border-bottom: 1.5px solid var(--soft);
+    transform: rotate(45deg);
+    animation: bounce 2s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%,100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(4px); }
+  }
+
+  /* ══════════════════════════════════════
+     SLIDE 2: iPHONE NOTES LOGLINE
+     ══════════════════════════════════════ */
+  .s-logline {
+    background: #1c1c1e;
+    text-align: center;
+  }
+
+  .s-logline .sn { color: rgba(255,255,255,0.25); }
+
+  .notes-phone {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #1c1c1e;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .notes-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .notes-bar-left {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    color: #ff9f0a;
+    letter-spacing: 0.05em;
+  }
+
+  .notes-bar-right {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .notes-date {
+    text-align: center;
+    padding: 0.8rem 0 0.2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    color: rgba(255,255,255,0.2);
+  }
+
+  .notes-title-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--w);
+    padding: 0.5rem 1.5rem 0.3rem;
+    text-align: left;
+  }
+
+  .notes-body {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+    padding: 0.3rem 1.5rem 1.5rem;
+    text-align: left;
+    line-height: 1.9;
+  }
+
+  .notes-body .hl {
+    color: #ff9f0a;
+    font-weight: 700;
+  }
+
+  /* ══════════════════════════════════════
+     SLIDE 3: FILM STRIP TONE
+     ══════════════════════════════════════ */
+  .s-tone {
+    background: var(--w);
+    border-top: 1px solid var(--baby);
+    border-bottom: 1px solid var(--baby);
+  }
+
+  .tone-headline {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-style: italic;
+    color: var(--rose);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .tone-body {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--plum);
+    line-height: 1.85;
+    max-width: 580px;
+    opacity: 0.85;
+  }
+
+  /* Film strip */
+  .film-strip {
+    display: flex;
+    gap: 0;
+    margin-top: 2.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--ink);
+  }
+
+  .film-frame {
+    flex: 1;
+    min-width: 0;
+    padding: 1.2rem 0.5rem;
+    text-align: center;
+    background: var(--ink);
+    border-right: 2px solid rgba(255,255,255,0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  .film-frame:last-child { border-right: none; }
+
+  .film-frame:hover {
+    background: var(--hot);
+  }
+
+  .film-frame::before, .film-frame::after {
+    content: '○ ○ ○ ○';
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 0.3rem;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.3em;
+    text-align: center;
+  }
+
+  .film-frame::before { top: 3px; }
+  .film-frame::after { bottom: 3px; }
+
+  .film-label {
+    font-family: 'Instrument Serif', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--w);
+    letter-spacing: 0.02em;
+  }
+
+  .film-frame.lit {
+    background: var(--hot);
+  }
+
+  .film-hover-desc {
+    font-family: 'Instrument Serif', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--plum);
+    margin-top: 1.25rem;
+    min-height: 2.5rem;
+    line-height: 1.6;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  /* ══════════════════════════════════════
+     SLIDE 4: WHY TUBI (WITH PULL QUOTE)
+     ══════════════════════════════════════ */
+  .s-tubi {
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(255,182,213,0.2) 0%, transparent 50%),
+      var(--cream);
+  }
+
+  .pull-quote {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-style: italic;
+    color: var(--plum);
+    line-height: 1.5;
+    max-width: 560px;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .pull-quote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--hot);
+    border-radius: 3px;
+  }
+
+  .pull-attr {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--hot);
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .tubi-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  .tubi-title em { color: var(--hot); }
+
+  .trow { display: grid; gap: 1rem; }
+
+  .tcard {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.5rem;
+    background: var(--w);
+    border: 1.5px solid var(--baby);
+    border-radius: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .tcard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255,45,123,0.08);
+    border-color: var(--soft);
+  }
+
+  .tcard-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--hot);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .tcard-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--hot);
+    margin-bottom: 0.35rem;
+  }
+
+  .tcard-text {
+    font-size: 0.88rem;
+    color: var(--plum);
+    line-height: 1.7;
+  }
+
+  .tcard-text b { font-weight: 600; color: var(--ink); }
+
+  /* ══════════════════════════════════════
+     SLIDE 5: MOVIE TICKET STUBS
+     ══════════════════════════════════════ */
+  .s-market {
+    text-align: center;
+    background:
+      radial-gradient(ellipse at 50% 60%, rgba(255,45,123,0.05) 0%, transparent 50%),
+      var(--cream);
+  }
+
+  .market-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+  }
+
+  .market-title em { color: var(--hot); }
+
+  .tickets {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .ticket {
+    width: 175px;
+    background: var(--w);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+  }
+
+  .ticket:hover {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+
+  /* Perforated edge */
+  .ticket::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    background:
+      radial-gradient(circle at 100% 8px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 24px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 40px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 56px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 72px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 88px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 104px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 120px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 136px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 152px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 168px, var(--cream) 5px, transparent 5px),
+      radial-gradient(circle at 100% 184px, var(--cream) 5px, transparent 5px);
+    background-size: 24px 16px;
+    background-repeat: repeat-y;
+    pointer-events: none;
+  }
+
+  .ticket-top {
+    background: var(--hot);
+    padding: 1rem 1rem 0.8rem;
+    text-align: left;
+  }
+
+  .ticket-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.4rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .ticket-film {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--w);
+    line-height: 1.2;
+    margin-top: 0.2rem;
+  }
+
+  .ticket-bottom {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .ticket-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.2rem;
+    color: var(--hot);
+    line-height: 1;
+  }
+
+  .ticket-detail {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.45rem;
+    letter-spacing: 0.08em;
+    color: var(--plum);
+    margin-top: 0.35rem;
+    line-height: 1.4;
+    opacity: 0.6;
+  }
+
+  .ticket-barcode {
+    display: flex;
+    gap: 1.5px;
+    margin-top: 0.7rem;
+    height: 18px;
+    align-items: flex-end;
+    opacity: 0.15;
+  }
+
+  .ticket-barcode span {
+    display: block;
+    width: 2px;
+    background: var(--ink);
+    border-radius: 1px;
+  }
+
+  /* ══════════════════════════════════════
+     SLIDE 6: LOVE LETTER WRITER
+     ══════════════════════════════════════ */
+  .s-writer {
+    background:
+      radial-gradient(ellipse at 40% 30%, rgba(255,182,213,0.2) 0%, transparent 50%),
+      var(--cream);
+  }
+
+  .letter {
+    max-width: 560px;
+    margin: 0 auto;
+    background: var(--w);
+    padding: 2.75rem 2.5rem 2.25rem;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 40px rgba(255,45,123,0.06);
+    transform: rotate(-0.8deg);
+    border-radius: 2px;
+  }
+
+  .letter::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(1.5deg);
+    width: 80px;
+    height: 24px;
+    background: rgba(255,214,231,0.7);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  .letter::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom, transparent, transparent 31px, rgba(255,182,213,0.18) 31px, rgba(255,182,213,0.18) 32px);
+    pointer-events: none;
+    border-radius: 2px;
+  }
+
+  .letter-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .letter-role {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--hot);
+    margin-top: 0.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .letter-body {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--plum);
+    line-height: 2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .letter-body b {
+    font-weight: 400;
+    color: var(--hot);
+  }
+
+  .letter-sign {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--hot);
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .creds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1.75rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cr {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    background: var(--blush);
+    color: var(--rose);
+  }
+
+  /* ══════════════════════════════════════
+     SLIDE 7: CTA
+     ══════════════════════════════════════ */
+  .s-cta {
+    text-align: center;
+    background:
+      radial-gradient(ellipse at 50% 80%, rgba(255,182,213,0.35) 0%, transparent 50%),
+      var(--cream);
+  }
+
+  .cta-quote {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-style: italic;
+    color: var(--rose);
+    max-width: 500px;
+    margin: 0 auto 0.6rem;
+    line-height: 1.4;
+  }
+
+  .cta-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    color: var(--soft);
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--w);
+    background: var(--hot);
+    border: none;
+    border-radius: 100px;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 25px rgba(255,45,123,0.3);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 40px rgba(255,45,123,0.4);
+    background: var(--rose);
+  }
+
+  .cta-fine { font-size: 0.8rem; color: var(--plum); margin-top: 1.5rem; opacity: 0.4; }
+
+  .foot {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin-top: 3rem;
+  }
+
+  /* TICKER */
+  .ticker-bar {
+    overflow: hidden;
+    padding: 0.8rem 0;
+    background: var(--plum);
+    scroll-snap-align: none;
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 2.5rem;
+    animation: xscroll 28s linear infinite;
+    width: max-content;
+  }
+
+  .ti {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.4);
+    white-space: nowrap;
+  }
+
+  .ti .pk { color: var(--hot); opacity: 1; }
+
+  @keyframes xscroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .slide { padding: 2rem 1.25rem; }
+    .tickets { gap: 0.75rem; }
+    .ticket { width: 150px; }
+    .ticket-num { font-size: 1.8rem; }
+    .tcard { grid-template-columns: 1fr; gap: 0.75rem; }
+    .tcard-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+    .dots { right: 0.6rem; gap: 0.5rem; }
+    .dot { width: 6px; height: 6px; }
+    .letter { padding: 2rem 1.5rem; }
+    .film-label { font-size: 0.65rem; }
+    .notes-body { font-size: 0.72rem; }
+    .pull-quote { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="dots" id="dots"></nav>
+
+<!-- ═══ SLIDE 1: TYPEWRITER TITLE ═══ -->
+<section class="slide s-title-slide" data-slide="0">
+  <span class="floater" style="top:12%;left:8%;">&hearts;</span>
+  <span class="floater" style="top:20%;right:10%;">&#10038;</span>
+  <span class="floater" style="bottom:18%;left:12%;">&#9734;</span>
+
+  <div class="slide-inner" style="text-align:center;">
+    <div class="badge">&hearts; Original Series</div>
+
+    <div class="tw-wrap">
+      <div id="tw-struck" class="tw-struck">How I Found a Boyfriend</div>
+      <div class="tw-line" id="tw-main"></div>
+    </div>
+
+    <p class="byline" id="byline">Written by Camille Campbell</p>
+    <div class="tags-row" id="tags">
+      <span class="tag">Original Series</span>
+      <span class="tag">8 Episodes</span>
+      <span class="tag">Teen Comedy</span>
+      <span class="tag">Gen Z</span>
+      <span class="tag">TikTok Era</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint" id="scrollhint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span class="ti"><span class="pk">@sarahk.mp4:</span> NOT THE JORDAN 4s</span>
+    <span class="ti"><span class="pk">@hinge_unhinged:</span> she got BANNED at her own birthday party</span>
+    <span class="ti"><span class="pk">@toddwiththe4s:</span> i want my shoes back</span>
+    <span class="ti"><span class="pk">@user92847:</span> "the other woman?" this is CINEMA</span>
+    <span class="ti"><span class="pk">@jess_believes:</span> the AI apology scene broke me</span>
+    <span class="ti"><span class="pk">@filmtok:</span> someone get this girl a deal</span>
+    <span class="ti"><span class="pk">@sarahk.mp4:</span> NOT THE JORDAN 4s</span>
+    <span class="ti"><span class="pk">@hinge_unhinged:</span> she got BANNED at her own birthday party</span>
+    <span class="ti"><span class="pk">@toddwiththe4s:</span> i want my shoes back</span>
+    <span class="ti"><span class="pk">@user92847:</span> "the other woman?" this is CINEMA</span>
+    <span class="ti"><span class="pk">@jess_believes:</span> the AI apology scene broke me</span>
+    <span class="ti"><span class="pk">@filmtok:</span> someone get this girl a deal</span>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 2: iPHONE NOTES LOGLINE ═══ -->
+<section class="slide s-logline" data-slide="1">
+  <div class="slide-inner" style="text-align:center;">
+    <div class="sn" style="color:rgba(255,255,255,0.25);">01 &mdash; Logline</div>
+    <div class="notes-phone">
+      <div class="notes-bar">
+        <span class="notes-bar-left">&lt; Notes</span>
+        <span class="notes-bar-right">Done</span>
+      </div>
+      <div class="notes-date">2:47 AM &middot; Can't sleep &middot; November 2025</div>
+      <div class="notes-title-text">series idea (hear me out)</div>
+      <div class="notes-body">
+        ok so what if there's this girl. senior year. <span class="hl">5.0 GPA. zero boyfriends. ever.</span> and she decides to turn her chronic singleness into a viral TikTok thesis experiment. like she's going to SCIENTIFICALLY crack the code to romance.<br><br>
+        but then it spirals. the stunts get worse. the views go up. her friendships go down. she tanks her dream college app. and she has to choose between <span class="hl">the audience that loves watching her fail</span> and the people she's actually failing.<br><br>
+        this is either the best idea i've ever had or the most unhinged. posting it before i overthink it.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 3: FILM STRIP TONE ═══ -->
+<section class="slide s-tone" data-slide="2">
+  <div class="slide-inner">
+    <div class="sn">02 &mdash; Tone</div>
+    <p class="tone-headline">Clueless meets Never Have I Ever.</p>
+    <p class="tone-body">Fourth-wall narration. Cringe montages you watch through your fingers. Quiet devastation that sneaks up mid-laugh. A comedy that earns its gut-punch.</p>
+    <div class="film-strip">
+      <div class="film-frame lit" data-desc="Direct-address confessional. Margaret talks to the audience like Phoebe talks to the camera &mdash; except Margaret is lying to herself and the audience knows it."><div class="film-label">Fleabag</div></div>
+      <div class="film-frame" data-desc="Girl becomes infamous at school for something romantic. Leans into it. Regrets it. Finds herself on the other side. Margaret's entire arc."><div class="film-label">Easy A</div></div>
+      <div class="film-frame" data-desc="The cringe IS the point. Excruciating honesty about wanting to be liked. The phone checking. The performing for no one."><div class="film-label">Eighth Grade</div></div>
+      <div class="film-frame" data-desc="Unhinged female leads who commit fully to terrible plans. The kissing booth. The fake boyfriend. The homecoming campaign. Same energy."><div class="film-label">Bottoms</div></div>
+      <div class="film-frame" data-desc="Smart girls, big night, everything goes wrong. The friendship matters more than the mission. Margaret just takes eight episodes to learn that."><div class="film-label">Booksmart</div></div>
+      <div class="film-frame" data-desc="Overachieving girl. Messy love life. Narrator who roasts the protagonist. Margaret is Devi with a TikTok account and worse impulse control."><div class="film-label">Never Have I Ever</div></div>
+    </div>
+    <div class="film-hover-desc" id="filmDesc">Hover a title to see why</div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 4: WHY THIS SHOW ═══ -->
+<section class="slide s-tubi" data-slide="3">
+  <div class="slide-inner">
+    <div class="sn">03 &mdash; Why This Show</div>
+
+    <p class="tubi-title">Here's why this show <em>should exist.</em></p>
+    <div class="trow">
+      <div class="tcard">
+        <div class="tcard-icon">&#128241;</div>
+        <div>
+          <div class="tcard-label">Scroll Culture Native</div>
+          <div class="tcard-text">Live viewer counts tick up during the worst moments. TikTok comments scroll on screen. The algorithm <b>rewards her desperation with followers</b>. This isn't a show that references internet culture. It's built inside it.</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-icon">&#127919;</div>
+        <div>
+          <div class="tcard-label">A Voice, Not a Note</div>
+          <div class="tcard-text">A female-led teen comedy about <b>performative vulnerability and parasocial relationships</b> written by a 21-year-old who lives in this world. Not a studio executive's idea of Gen Z. A document from inside it.</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-icon">&#128293;</div>
+        <div>
+          <div class="tcard-label">Pre-Built Virality</div>
+          <div class="tcard-text">Every set piece is a ready-made clip, reaction video, and TikTok stitch. The marketing is <b>baked into the narrative</b>. This show doesn't need a campaign because it IS one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 5: MOVIE TICKET STUBS ═══ -->
+<section class="slide s-market" data-slide="4">
+  <div class="slide-inner" style="text-align:center;">
+    <div class="sn">04 &mdash; Market</div>
+    <p class="market-title">This genre <em>prints</em></p>
+    <div class="tickets">
+
+      <div class="ticket">
+        <div class="ticket-top">
+          <div class="ticket-label">Now Streaming</div>
+          <div class="ticket-film">Never Have<br>I Ever</div>
+        </div>
+        <div class="ticket-bottom">
+          <div class="ticket-num">40M</div>
+          <div class="ticket-detail">Households in first<br>month on Netflix</div>
+          <div class="ticket-barcode">
+            <span style="height:18px"></span><span style="height:12px"></span><span style="height:18px"></span><span style="height:8px"></span><span style="height:15px"></span><span style="height:18px"></span><span style="height:10px"></span><span style="height:14px"></span><span style="height:18px"></span><span style="height:6px"></span><span style="height:16px"></span><span style="height:18px"></span><span style="height:9px"></span><span style="height:13px"></span><span style="height:18px"></span><span style="height:7px"></span><span style="height:15px"></span><span style="height:11px"></span><span style="height:18px"></span><span style="height:8px"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-top">
+          <div class="ticket-label">Now Streaming</div>
+          <div class="ticket-film">The Summer I<br>Turned Pretty</div>
+        </div>
+        <div class="ticket-bottom">
+          <div class="ticket-num">70M</div>
+          <div class="ticket-detail">Viewers globally<br>#1 women 18&ndash;34</div>
+          <div class="ticket-barcode">
+            <span style="height:14px"></span><span style="height:18px"></span><span style="height:9px"></span><span style="height:16px"></span><span style="height:7px"></span><span style="height:18px"></span><span style="height:12px"></span><span style="height:18px"></span><span style="height:5px"></span><span style="height:15px"></span><span style="height:18px"></span><span style="height:10px"></span><span style="height:13px"></span><span style="height:18px"></span><span style="height:8px"></span><span style="height:17px"></span><span style="height:6px"></span><span style="height:18px"></span><span style="height:11px"></span><span style="height:14px"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-top">
+          <div class="ticket-label">Now Streaming</div>
+          <div class="ticket-film">To All the Boys<br>I've Loved Before</div>
+        </div>
+        <div class="ticket-bottom">
+          <div class="ticket-num">96%</div>
+          <div class="ticket-detail">Rotten Tomatoes<br>3 films + spinoff series</div>
+          <div class="ticket-barcode">
+            <span style="height:18px"></span><span style="height:11px"></span><span style="height:15px"></span><span style="height:18px"></span><span style="height:7px"></span><span style="height:13px"></span><span style="height:18px"></span><span style="height:9px"></span><span style="height:16px"></span><span style="height:18px"></span><span style="height:6px"></span><span style="height:14px"></span><span style="height:18px"></span><span style="height:10px"></span><span style="height:12px"></span><span style="height:18px"></span><span style="height:8px"></span><span style="height:17px"></span><span style="height:18px"></span><span style="height:5px"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 6: LOVE LETTER WRITER ═══ -->
+<section class="slide s-writer" data-slide="5">
+  <div class="slide-inner">
+    <div class="sn">05 &mdash; The Writer</div>
+    <div class="letter">
+      <p class="letter-name">Camille Campbell</p>
+      <p class="letter-role">Writer &middot; Founder &middot; Forbes 30 Under 30 Arizona</p>
+      <p class="letter-body">
+        I've been writing books since I was fourteen. <b>Seven published books</b> &mdash; one of them an Amazon #1 bestseller, which still feels crazy to me. My college thesis was on AI literacy (not finding a boyfriend) &mdash; though the data analytics would go hard on that topic. This is my first original series &mdash; and I wrote it for every overachieving girl who's figured out everything except the one thing that was supposed to be easy.
+      </p>
+      <p class="letter-sign">&mdash; Camille <span style="font-style:normal;">&hearts;</span></p>
+      <div class="creds">
+        <span class="cr">Amazon #1 Bestseller</span>
+        <span class="cr">Forbes 30 Under 30</span>
+        <span class="cr">Gold Moonbeam Award</span>
+        <span class="cr">Scholastic Art &amp; Writing</span>
+        <span class="cr">7 Published Books</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 7: CTA ═══ -->
+<section class="slide s-cta" data-slide="6">
+  <div class="slide-inner" style="text-align:center;">
+    <p class="cta-quote" style="font-size:clamp(0.85rem, 2vw, 1.1rem); color:var(--soft); font-style:normal; margin-bottom:1.5rem; font-family:'Space Mono',monospace; letter-spacing:0.1em;">Major spoiler: how does it end?</p>
+    <p class="cta-quote">"She's still single.<br>And she's okay with that.<br>(Most days.)"</p>
+    <p class="cta-sub">&mdash; Final title card</p>
+    <a href="mailto:camillesuzannecampbell@gmail.com" class="cta-btn">&hearts;&nbsp; Get in Touch</a>
+    <p class="cta-fine">Pilot script, TV show script &amp; series bible available upon request</p>
+    <p class="foot">&copy; 2026 Camille Campbell &middot; All Rights Reserved</p>
+  </div>
+</section>
+
+<script>
+  // ═══ NAV DOTS ═══
+  const slides = document.querySelectorAll('.slide');
+  const dotsC = document.getElementById('dots');
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot';
+    d.addEventListener('click', () => slides[i].scrollIntoView({ behavior: 'smooth' }));
+    dotsC.appendChild(d);
+  });
+  const dots = document.querySelectorAll('.dot');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = +e.target.dataset.slide;
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s => obs.observe(s));
+
+  // ═══ TYPEWRITER EFFECT ═══
+  const el = document.getElementById('tw-main');
+  const struck = document.getElementById('tw-struck');
+  const byline = document.getElementById('byline');
+  const tags = document.getElementById('tags');
+  const scrollh = document.getElementById('scrollhint');
+
+  const line1 = 'How I Found a Boyfriend';
+  const line2plain = 'How to Find a Boyfriend';
+  let i = 0;
+
+  function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  async function typewriter() {
+    await sleep(600);
+
+    for (i = 0; i <= line1.length; i++) {
+      el.innerHTML = line1.slice(0, i) + '<span class="tw-cursor"></span>';
+      await sleep(55);
+    }
+    await sleep(800);
+
+    struck.style.opacity = '1';
+    struck.style.position = 'relative';
+    el.innerHTML = '';
+    await sleep(600);
+
+    for (i = 0; i <= line2plain.length; i++) {
+      let text = line2plain.slice(0, i);
+      let bfIdx = text.indexOf('Boyfriend');
+      if (bfIdx > -1) {
+        let before = text.slice(0, bfIdx);
+        let bf = text.slice(bfIdx);
+        el.innerHTML = before + '<span class="pop">' + bf + '</span><span class="tw-cursor"></span>';
+      } else {
+        el.innerHTML = text + '<span class="tw-cursor"></span>';
+      }
+      await sleep(55);
+    }
+
+    await sleep(300);
+    byline.classList.add('show');
+    await sleep(300);
+    tags.classList.add('show');
+    await sleep(400);
+    scrollh.classList.add('show');
+  }
+
+  typewriter();
+
+  // ═══ FILM STRIP HOVER ═══
+  const filmDesc = document.getElementById('filmDesc');
+  const frames = document.querySelectorAll('.film-frame');
+  frames.forEach(f => {
+    f.addEventListener('mouseenter', () => {
+      filmDesc.textContent = f.dataset.desc;
+      filmDesc.style.opacity = '1';
+    });
+    f.addEventListener('mouseleave', () => {
+      filmDesc.textContent = 'Hover a title to see why';
+      filmDesc.style.opacity = '0.6';
+    });
+  });
+</script>
+
+</body>
+</html>
