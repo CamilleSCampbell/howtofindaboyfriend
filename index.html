@@ -354,27 +354,35 @@
      SLIDE 3: FILM STRIP TONE
      ══════════════════════════════════════ */
   .s-tone {
-    background: var(--w);
-    border-top: 1px solid var(--baby);
-    border-bottom: 1px solid var(--baby);
+    background-color: var(--ink);
+    background-image:
+      linear-gradient(rgba(26,10,18,0.62), rgba(26,10,18,0.72)),
+      url('assets/locker.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: 1px solid rgba(255,182,213,0.18);
+    border-bottom: 1px solid rgba(255,182,213,0.18);
   }
 
   .tone-headline {
     font-family: 'Instrument Serif', serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-style: italic;
-    color: var(--rose);
+    color: var(--w);
     line-height: 1.15;
     margin-bottom: 1.5rem;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.35);
   }
 
   .tone-body {
     font-size: 1.05rem;
     font-weight: 400;
-    color: var(--plum);
+    color: rgba(255,255,255,0.88);
     line-height: 1.85;
     max-width: 580px;
-    opacity: 0.85;
+    opacity: 1;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.4);
   }
 
   /* Film strip */
@@ -435,12 +443,13 @@
     font-family: 'Instrument Serif', serif;
     font-size: 0.85rem;
     font-style: italic;
-    color: var(--plum);
+    color: rgba(255,255,255,0.82);
     margin-top: 1.25rem;
     min-height: 2.5rem;
     line-height: 1.6;
-    opacity: 0.6;
+    opacity: 0.85;
     transition: opacity 0.3s ease;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
 
   /* ══════════════════════════════════════
