@@ -404,7 +404,8 @@
     border-right: 2px solid rgba(255,255,255,0.1);
     position: relative;
     transition: all 0.3s ease;
-    cursor: default;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .film-frame:last-child { border-right: none; }
@@ -441,15 +442,16 @@
 
   .film-hover-desc {
     font-family: 'Instrument Serif', serif;
-    font-size: 0.85rem;
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
     font-style: italic;
-    color: rgba(255,255,255,0.82);
-    margin-top: 1.25rem;
-    min-height: 2.5rem;
-    line-height: 1.6;
-    opacity: 0.85;
+    color: rgba(255,255,255,0.92);
+    margin-top: 1.5rem;
+    min-height: 3.75rem;
+    line-height: 1.5;
+    opacity: 0.92;
     transition: opacity 0.3s ease;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 10px rgba(0,0,0,0.55);
+    max-width: 720px;
   }
 
   /* ══════════════════════════════════════
@@ -1099,7 +1101,7 @@
       <div class="film-frame" data-desc="Smart girls, big night, everything goes wrong. The friendship matters more than the mission. Margaret just takes eight episodes to learn that."><div class="film-label">Booksmart</div></div>
       <div class="film-frame" data-desc="Overachieving girl. Messy love life. Narrator who roasts the protagonist. Margaret is Devi with a TikTok account and worse impulse control."><div class="film-label">Never Have I Ever</div></div>
     </div>
-    <div class="film-hover-desc" id="filmDesc">Hover a title to see why</div>
+    <div class="film-hover-desc" id="filmDesc">Tap or hover a title to see why &rarr;</div>
   </div>
 </section>
 
@@ -1327,18 +1329,30 @@
 
   typewriter();
 
-  // ═══ FILM STRIP HOVER ═══
+  // ═══ FILM STRIP HOVER + TAP ═══
   const filmDesc = document.getElementById('filmDesc');
   const frames = document.querySelectorAll('.film-frame');
+  const initialHint = filmDesc.textContent;
+  let lockedDesc = null;
+
+  function lockFrame(frame) {
+    frames.forEach(x => x.classList.remove('lit'));
+    frame.classList.add('lit');
+    lockedDesc = frame.dataset.desc;
+    filmDesc.textContent = lockedDesc;
+    filmDesc.style.opacity = '1';
+  }
+
   frames.forEach(f => {
     f.addEventListener('mouseenter', () => {
       filmDesc.textContent = f.dataset.desc;
       filmDesc.style.opacity = '1';
     });
     f.addEventListener('mouseleave', () => {
-      filmDesc.textContent = 'Hover a title to see why';
-      filmDesc.style.opacity = '0.6';
+      filmDesc.textContent = lockedDesc || initialHint;
+      filmDesc.style.opacity = lockedDesc ? '1' : '0.75';
     });
+    f.addEventListener('click', () => lockFrame(f));
   });
 </script>
 
